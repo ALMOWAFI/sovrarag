@@ -12,6 +12,7 @@ Run:
 import json
 import logging
 import os
+import random
 import re
 
 import httpx
@@ -56,6 +57,45 @@ class DefectInput(BaseModel):
     product_model: str = Field("", examples=["PCB-X100"])
     batch_id: str = Field("", examples=["BATCH-2026-05-18-A"])
     supplier_id: str = Field("", examples=["SUP-042"])
+
+
+# ---------------------------------------------------------------------------
+# Example pools — when optional fields are not provided, pick randomly
+# so each response references different IDs instead of always the same ones
+# ---------------------------------------------------------------------------
+
+FACTORIES = [
+    ("FACTORY-BERLIN-01", "Berlin Electronics Plant"),
+    ("FACTORY-DRESDEN-02", "Dresden PCB Manufacturing"),
+    ("FACTORY-MUNICH-03", "Munich Automotive Electronics"),
+    ("FACTORY-HAMBURG-04", "Hamburg Circuit Assembly"),
+    ("FACTORY-STUTTGART-05", "Stuttgart Precision Electronics"),
+]
+
+LINES = ["LINE-A1", "LINE-A2", "LINE-A3", "LINE-B1", "LINE-B2", "LINE-C1", "LINE-C2"]
+STATIONS = ["AOI-01", "AOI-02", "AOI-03", "AOI-04", "AOI-05", "AOI-07", "AOI-09"]
+PRODUCTS = ["PCB-X100", "PCB-X200", "PCB-X300", "PCB-X400", "PCB-X500"]
+BATCHES = ["BATCH-2026-05-18-A", "BATCH-2026-05-19-B", "BATCH-2026-05-20-C", "BATCH-2026-06-01-A", "BATCH-2026-06-10-B"]
+SUPPLIERS = ["SUP-042", "SUP-055", "SUP-063", "SUP-077", "SUP-081"]
+
+
+def fill_defaults(defect: DefectInput) -> DefectInput:
+    """Auto-fill empty optional fields with random values from the pools."""
+    if not defect.factory_id:
+        fac = random.choice(FACTORIES)
+        defect.factory_id = fac[0]
+        defect.factory_name = fac[1]
+    if not defect.line_id:
+        defect.line_id = random.choice(LINES)
+    if not defect.station_id:
+        defect.station_id = random.choice(STATIONS)
+    if not defect.product_model:
+        defect.product_model = random.choice(PRODUCTS)
+    if not defect.batch_id:
+        defect.batch_id = random.choice(BATCHES)
+    if not defect.supplier_id:
+        defect.supplier_id = random.choice(SUPPLIERS)
+    return defect
 
 
 class DefectOutput(BaseModel):
@@ -240,11 +280,13 @@ async def explain_defect(defect: DefectInput) -> DefectOutput:
     Accepts a defect detection event, retrieves relevant SOPs,
     and returns structured disposition analysis.
     """
+    # Auto-fill empty context fields with random values
+    defect = fill_defaults(defect)
+
     logger.info(
         f"Received: defect={defect.defect_type} location={defect.location} "
-        f"confidence={defect.confidence:.2f} severity={defect.severity}"
-        + (f" factory={defect.factory_id}" if defect.factory_id else "")
-        + (f" station={defect.station_id}" if defect.station_id else "")
+        f"confidence={defect.confidence:.2f} severity={defect.severity} "
+        f"factory={defect.factory_id} station={defect.station_id}"
     )
 
     # --- Step 1: RAG retrieval ---
