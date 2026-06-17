@@ -1,0 +1,37 @@
+STANDARD OPERATING PROCEDURE
+SOP-AOI-CAL-v1.4: AOI Calibration Drift and Post-Calibration Monitoring
+Revision: 1.4 | Effective Date: 2025-10-01 | Owner: Quality Engineering / Equipment Engineering
+
+1. SCOPE
+This SOP defines the procedure for monitoring AOI detection accuracy after camera or lighting calibration events, and for handling potential calibration-induced detection drift.
+
+2. BACKGROUND
+AOI systems rely on precise camera alignment, lighting angles, and reference thresholds. After calibration events (camera replacement, lighting adjustment, reference board update), detection rates for certain defect types may change — either increasing (more sensitive) or decreasing (less sensitive).
+
+3. POST-CALIBRATION MONITORING
+
+3.1 Monitoring Window:
+- After any camera or lighting calibration, a monitoring window of 5 production shifts is activated.
+- During this window, all flagged defects must be cross-referenced with manual inspection results.
+
+3.2 Detection Rate Comparison:
+- If defect detection rate increases significantly after camera or lighting calibration, compare AOI predictions with manual inspection results.
+- A significant increase is defined as >20% change in detection rate for any defect category.
+- Review calibration settings if manual confirmation rate drops below 60%.
+
+3.3 False Positive Assessment:
+- If manual review confirms fewer than 60% of post-calibration detections as real defects, the calibration may have introduced sensitivity drift.
+- Common causes: lighting angle changes affecting reflective surfaces, threshold changes affecting copper trace detection, reference board mismatch.
+
+4. DISPOSITION DURING MONITORING WINDOW
+- All defect detections during the monitoring window require manual review before final disposition.
+- Do not auto-reject based solely on AOI detection during the monitoring window.
+- Final disposition must be manual_review_required_after_calibration_drift.
+
+5. ESCALATION
+- If detection rate drift persists beyond the monitoring window, recalibrate AOI using certified reference boards.
+- If false positive rate remains >40% after recalibration, escalate to equipment engineering for camera/lighting hardware inspection.
+
+6. REFERENCES
+- TROUBLESHOOT-AOI-REFLECTION-v1.0: AOI Reflection and Lighting Troubleshooting
+- TECH-PCB-X100-VISUAL-SENSITIVITY: Visual Sensitivity of Reflective Copper Regions

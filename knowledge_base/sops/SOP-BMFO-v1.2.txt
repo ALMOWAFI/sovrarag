@@ -1,0 +1,38 @@
+STANDARD OPERATING PROCEDURE
+SOP-BMFO-v1.2: Base Material Foreign Object (BMFO) Defect Handling
+Revision: 1.2 | Effective Date: 2025-11-01 | Owner: Quality Engineering
+
+1. SCOPE
+This SOP covers the identification, disposition, and escalation of Base Material Foreign Object (BMFO) defects detected during AOI inspection on PCB assemblies.
+
+2. DEFINITION
+BMFO refers to foreign particles, fibers, dust, or debris found on the base material (substrate) of a PCB. These objects are located on the non-conductive laminate surface and are distinguished from Conductor Foreign Object (CFO) defects, which involve objects on or near conductor paths.
+
+3. DETECTION
+BMFO defects are typically detected by AOI systems as anomalous regions on the base material surface. Detection confidence depends on object size, contrast with substrate, and lighting conditions.
+
+4. DISPOSITION RULES
+
+4.1 Single Occurrence (No Recurrence Pattern):
+- If the foreign object is only on base material and not touching conductor paths, vias, or coating-sensitive areas: clean the affected board and reinspect.
+- If the object cannot be removed by standard cleaning, route to manual review.
+- Do NOT automatically reject unless the object affects conductors or sensitive areas.
+
+4.2 Recurring at Same Station:
+- If BMFO defects are recurring at the same station, check the contamination source.
+- Review maintenance logs for dust accumulation, environmental controls, and handling equipment.
+- If temporary cleaning has not resolved the issue, escalate to full station cleaning per CLEANING-PROCEDURE-AOI-v2.0.
+- Recurring BMFO at the same station with the same product suggests a station-level contamination problem, not a board-level issue.
+
+4.3 Recurring Across Lines or Factories:
+- If BMFO defects are found across multiple lines or factories with the same supplier lot, investigate supplier material quality.
+
+5. ESCALATION
+- Single board BMFO with no conductor involvement: clean_and_reinspect.
+- Recurring BMFO at same station (3+ cases in 30 days): clean_station and implement contamination monitoring.
+- BMFO touching conductor paths: reclassify as CFO and follow SOP-CONTAMINATION-v1.1.
+
+6. REFERENCES
+- SOP-CONTAMINATION-v1.1: Foreign Object Contamination Near Conductors
+- CLEANING-PROCEDURE-AOI-v2.0: AOI Station Cleaning Procedure
+- IPC-A-610 Rev G: Section 10 — Cleanliness

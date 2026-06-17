@@ -1,0 +1,40 @@
+TECHNICAL MANUAL
+TECH-PCB-X100-DENSE-ROUTING: Dense Conductor Routing Risk Assessment
+Product: PCB-X100 | Applicable Revisions: Rev-B, Rev-C
+
+1. PURPOSE
+This document assesses the electrical reliability risk associated with dense conductor routing areas on PCB-X100, particularly in the context of Short (SH) defect evaluation.
+
+2. DENSE ROUTING CHARACTERISTICS
+- PCB-X100 has dense conductor routing in the BCM-01 power distribution and signal processing regions.
+- Minimum trace spacing: 0.12mm in the densest areas.
+- Minimum trace width: 0.15mm.
+- Number of conductor layers in dense region: 4 (all layers active).
+
+3. RISK ASSESSMENT
+
+3.1 Short Defect Risk:
+- Dense conductor routing increases electrical reliability risk when short defects occur.
+- Shorts in dense areas are more likely to affect multiple signal paths simultaneously.
+- Dense routing makes rework more difficult — adjacent traces are easily damaged during repair.
+- Risk of undetected secondary shorts increases with routing density.
+
+3.2 Process Sensitivity:
+- Dense routing areas are more sensitive to:
+  - Etching process variation (under-etch leaves copper bridges)
+  - Incoming material quality (laminate surface cleanliness)
+  - Registration accuracy (layer-to-layer alignment)
+
+4. INSPECTION REQUIREMENTS
+- Dense routing areas require higher AOI resolution (minimum 15 um/pixel).
+- X-ray inspection may be required for inner-layer shorts in 4-layer regions.
+- Electrical testing (flying probe or ICT) is recommended for all dense-routing boards.
+
+5. DEFECT DISPOSITION IN DENSE AREAS
+- SH in dense routing: Higher severity than SH in standard routing.
+- If SH is linked to supplier material lot, dense routing increases the urgency for supplier containment.
+- Rework of shorts in dense routing is not recommended — rejection is preferred unless engineering approves specific procedure.
+
+6. REFERENCES
+- SOP-PCB-SHORT-v2.0: Short Defect Handling
+- TECH-PCB-X100-CONDUCTOR-MAP: Functional Conductor Path Mapping

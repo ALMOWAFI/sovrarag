@@ -1,0 +1,43 @@
+REPAIR AND MAINTENANCE PROCEDURE
+CLEANING-PROCEDURE-AOI-v2.0: AOI Station Full Cleaning Procedure
+Revision: 2.0 | Effective Date: 2025-09-01 | Owner: Equipment Engineering
+
+1. SCOPE
+This procedure defines the full cleaning requirements for AOI inspection stations when recurring foreign object detections (BMFO or CFO) indicate station-level contamination.
+
+2. WHEN TO PERFORM FULL CLEANING
+- Full station cleaning is required if foreign object detections continue after temporary cleaning.
+- Temporary cleaning (wiping visible surfaces, blowing with compressed air) is a first response but does not address contamination in enclosed areas, conveyor mechanisms, or camera housings.
+- Triggers for full cleaning:
+  - 3+ BMFO or CFO detections at the same station within 7 days after temporary cleaning.
+  - Maintenance log notes indicating dust accumulation near board loading area.
+  - Shift-correlated contamination pattern (e.g., night shift accumulation).
+
+3. FULL CLEANING PROCEDURE
+
+3.1 Preparation:
+- Stop production on the affected station.
+- Log cleaning event in maintenance system with station ID and reason.
+- Wear lint-free gloves and ESD-safe clothing.
+
+3.2 Cleaning Steps:
+Step 1: Remove all boards from conveyor and inspection area.
+Step 2: Clean conveyor rails, guide pins, and board support fixtures with IPA-dampened lint-free wipes.
+Step 3: Clean board loading and unloading mechanisms — pay special attention to areas where maintenance has noted dust accumulation.
+Step 4: Clean camera lens and lighting modules with approved optical cleaning solution.
+Step 5: Clean the interior of the inspection chamber using HEPA-filtered vacuum.
+Step 6: Inspect and clean air filtration system (replace filters if contaminated).
+Step 7: Clean handling robot grippers and guide surfaces if station includes automated handling.
+
+3.3 Verification:
+- Run 5 clean reference boards through the station after cleaning.
+- If any BMFO or CFO detection occurs on reference boards, repeat cleaning.
+- Monitor production boards for 3 shifts after cleaning to confirm resolution.
+
+4. POST-CLEANING MONITORING
+- Track BMFO and CFO detection rates for 3 shifts after full cleaning.
+- If detections return within 3 shifts, escalate to equipment engineering for root cause investigation (HVAC, facility, equipment wear).
+
+5. REFERENCES
+- SOP-BMFO-v1.2: Base Material Foreign Object Handling
+- SOP-CONTAMINATION-v1.1: Foreign Object Contamination Near Conductors

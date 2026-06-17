@@ -1,0 +1,41 @@
+REPAIR AND MAINTENANCE GUIDE
+REPAIR-GUIDE-HANDLING-ROBOT-02: Handling Robot Repair and Calibration Guide
+Equipment: HANDLING-ROBOT-02 | Station Area: LINE-A3 AOI Inspection
+Revision: 1.0 | Effective Date: 2025-07-15 | Owner: Equipment Engineering
+
+1. SCOPE
+This guide covers repair, maintenance, and calibration procedures for HANDLING-ROBOT-02, the automated PCB transfer robot operating near the conductor-sensitive inspection area on LINE-A3.
+
+2. COMMON REPAIR ACTIONS
+
+2.1 Guide Replacement:
+- Replace worn handling guides when visual inspection shows groove wear >0.5mm or surface roughness on contact surfaces.
+- Guide replacement alone is a partial repair — it addresses the worn contact surface but does not verify that the robot's path programming, pressure settings, or alignment are correct.
+
+2.2 Contact Surface Polishing:
+- Polish robot gripper contact surfaces to remove burrs or debris accumulation.
+- Polishing reduces the risk of surface-to-board scratching but does not address misalignment.
+
+3. POST-REPAIR CALIBRATION REQUIREMENTS
+- After guide replacement, robot path and pressure calibration must be verified before production restart.
+- This is a critical requirement — skipping calibration after guide replacement is the most common cause of recurring conductor scratch (CS) defects.
+
+3.1 Calibration Checklist:
+Step 1: Verify robot home position using reference markers.
+Step 2: Run path verification program — check all waypoints against nominal coordinates.
+Step 3: Measure gripper contact pressure using force gauge — compare to specification (typical: 2-5 N).
+Step 4: Run 10 test boards through the handling path — inspect for CS or contact marks.
+Step 5: If any CS detected on test boards, adjust path offset and/or pressure and re-test.
+Step 6: Log calibration results in maintenance system.
+
+4. RECURRENCE AFTER REPAIR
+- If conductor scratch defects recur within 7 days of guide replacement + surface polishing, the repair is classified as ineffective.
+- Common reasons for repair ineffectiveness:
+  - Robot path was not recalibrated after guide replacement (most common).
+  - Gripper pressure was not verified — new guides may change the contact geometry.
+  - Root cause is robot axis wear (not guide wear) — requires motor/encoder replacement.
+- When repair is ineffective: escalate to engineering for full robot mechanical assessment.
+
+5. REFERENCES
+- SOP-CS-v1.2: Conductor Scratch Defect Handling
+- TECH-PCB-X100-HANDLING-RISK: Handling Risk Assessment

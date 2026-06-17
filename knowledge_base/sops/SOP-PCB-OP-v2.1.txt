@@ -1,0 +1,42 @@
+STANDARD OPERATING PROCEDURE
+SOP-PCB-OP-v2.1: Open Defect (OP) on Conductor Paths
+Revision: 2.1 | Effective Date: 2025-09-15 | Owner: Quality Engineering
+
+1. SCOPE
+This SOP covers the identification, disposition, and escalation of Open (OP) defects detected on PCB conductor paths during AOI or electrical inspection.
+
+2. DEFINITION
+An Open (OP) defect is a break or discontinuity in a conductor trace, pad, or via connection that interrupts the intended electrical path. Open defects are critical for circuit functionality and reliability.
+
+3. SEVERITY CLASSIFICATION
+- Open defects on conductor paths are critical. They directly affect electrical continuity and circuit function.
+- Open defects in functional conductor regions (power distribution, signal paths, safety-critical circuits) are classified as highest severity.
+- Open defects in non-functional regions (test coupons, fiducial areas) are lower severity but must still be documented.
+
+4. DISPOSITION RULES
+
+4.1 Single Occurrence:
+- Route to manual inspection to confirm the open is real (not a false detection).
+- If confirmed, evaluate whether the affected conductor is in a functional zone.
+- Functional zone opens: reject or route to engineering-controlled rework.
+- Non-functional zone opens: log and monitor.
+
+4.2 Repeated OP Defects on Same Line or Board Region:
+- Repeated OP defects on the same line or board region require engineering escalation and process review.
+- Automatic pass is not allowed for repeated OP defects in functional conductor regions.
+- Investigate etching process parameters, chemical bath condition, and exposure settings.
+
+4.3 Post-Repair Recurrence:
+- If an OP defect recurs after manual repair (e.g., copper bridge repair), the repair is considered ineffective.
+- Manual bridge repair may restore continuity but does not address the root cause of repeated conductor formation or etching instability.
+- Escalate to engineering for process root cause analysis.
+
+5. ESCALATION
+- Single confirmed OP in functional zone: reject or engineering rework.
+- Recurring OP (2+ cases in 90 days on same region): escalate_engineering.
+- OP recurrence after repair: escalate_engineering — do not approve another manual repair without process review.
+
+6. REFERENCES
+- TECH-PCB-X100-CONDUCTOR-MAP: Functional conductor path mapping
+- REPAIR-GUIDE-OP-v1.0: Manual bridge repair guidelines
+- IPC-A-610 Rev G: Section 5 — Soldering and Connection Defects

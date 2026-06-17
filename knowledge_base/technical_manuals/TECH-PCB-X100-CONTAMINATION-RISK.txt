@@ -1,0 +1,44 @@
+TECHNICAL MANUAL
+TECH-PCB-X100-CONTAMINATION-RISK: Foreign Object Contamination Risk on Conductor Regions
+Product: PCB-X100 | Applicable Revisions: Rev-B, Rev-C
+
+1. PURPOSE
+This document describes the risk and impact of foreign object contamination specifically on conductor regions of PCB-X100, distinguishing between base material contamination (BMFO) and conductor contamination (CFO).
+
+2. CONTAMINATION RISK CLASSIFICATION
+
+2.1 Base Material Foreign Object (BMFO):
+- Foreign object located on the non-conductive substrate surface.
+- Risk: LOW to MEDIUM depending on proximity to conductors.
+- Impact: Generally cosmetic unless object migrates to conductor during subsequent processing.
+- Disposition: Clean and reinspect (single occurrence), station cleaning (recurring).
+
+2.2 Conductor Foreign Object (CFO):
+- Foreign object located on or near conductor traces, pads, or vias.
+- Risk: MEDIUM to HIGH.
+- Foreign objects on conductor regions are more serious than foreign objects on base material because they may interfere with electrical behavior.
+- Impact: Potential short circuit, impedance change, or solder joint interference.
+- Disposition: Manual review required. Clean only if object can be removed without conductor damage.
+
+3. CONTAMINATION SOURCES
+- Dust and particulate from production environment (especially near board loading areas).
+- Debris from handling equipment (robot grippers, guide rails, conveyor belts).
+- Fiber contamination from operator clothing or cleaning materials.
+- Solder balls or flux residue from upstream reflow process.
+
+4. SHIFT-CORRELATED CONTAMINATION
+- Contamination patterns often correlate with specific shifts due to:
+  - Different HVAC operating modes (day vs. night)
+  - Different cleaning schedules
+  - Different operator handling practices
+- Night shift contamination is commonly higher due to reduced environmental monitoring.
+
+5. STATION-LEVEL CONTAMINATION
+- If both BMFO and CFO detections concentrate at the same station, this indicates a station-level contamination source.
+- Station-level contamination requires full cleaning per CLEANING-PROCEDURE-AOI-v2.0.
+- Temporary cleaning is insufficient for station-level contamination.
+
+6. REFERENCES
+- SOP-CONTAMINATION-v1.1: Foreign Object Contamination Near Conductors
+- SOP-BMFO-v1.2: Base Material Foreign Object Handling
+- CLEANING-PROCEDURE-AOI-v2.0: AOI Station Cleaning Procedure

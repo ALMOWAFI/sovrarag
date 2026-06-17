@@ -1,0 +1,37 @@
+STANDARD OPERATING PROCEDURE
+SOP-LOW-CONF-v1.0: Low-Confidence Visual Detection Handling
+Revision: 1.0 | Effective Date: 2026-02-01 | Owner: Quality Engineering
+
+1. SCOPE
+This SOP covers the disposition of PCB inspection events where the computer vision (CV) or AOI system reports a defect detection with low confidence (below 0.50 threshold).
+
+2. DEFINITION
+A low-confidence detection is any visual inspection result where the classification confidence score is below 0.50 (50%). At this confidence level, the detection is uncertain — the flagged anomaly may be a real defect, a false positive from imaging artifacts, or a benign visual variation.
+
+3. DISPOSITION RULES
+
+3.1 Mandatory Manual Review:
+- Low-confidence visual detections below 0.50 should be manually reviewed before rework or rejection decisions.
+- The automated system should NOT auto-reject or auto-rework based on a low-confidence detection.
+- Manual review must be performed by a qualified inspector using magnification appropriate to the defect type.
+
+3.2 No Strong Root-Cause Claims:
+- If there is no historical recurrence data (same defect, same station, same product), the system should not claim a root cause.
+- Low-confidence detection with no supporting structured data (no recurrence, no repair history, no maintenance issues) should result in manual_review disposition only.
+- Do not invent patterns or escalation rationale when evidence is insufficient.
+
+3.3 After Manual Review:
+- If manual review confirms the defect: proceed with standard SOP for that defect type.
+- If manual review does not confirm the defect: log as false positive, update AOI program if pattern persists.
+
+4. CONFIDENCE THRESHOLDS (Reference):
+- >= 0.85: Treat as confirmed defect. Route to rework/reject per defect SOP.
+- 0.50 - 0.84: Route to manual verification station.
+- < 0.50: Low confidence. Manual review mandatory. No automatic disposition.
+
+5. ESCALATION
+- Low-confidence detection with no history: manual_review only.
+- Repeated low-confidence detections of same type at same station: investigate AOI program accuracy and recalibrate.
+
+6. REFERENCES
+- SOP-AOI-CAL-v1.4: AOI Calibration Drift Monitoring

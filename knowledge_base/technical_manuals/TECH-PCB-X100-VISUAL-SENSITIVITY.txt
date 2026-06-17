@@ -1,0 +1,40 @@
+TECHNICAL MANUAL
+TECH-PCB-X100-VISUAL-SENSITIVITY: Visual Inspection Sensitivity for Reflective Copper Regions
+Product: PCB-X100 | Applicable Revisions: Rev-B, Rev-C
+
+1. PURPOSE
+This document describes the visual inspection challenges related to reflective copper trace regions on PCB-X100 and provides guidance for interpreting AOI results on boards with high-reflectivity surfaces.
+
+2. REFLECTIVE COPPER CHARACTERISTICS
+- PCB-X100 uses a standard copper trace finish that can be highly reflective after etching.
+- Reflective copper trace regions can be sensitive to lighting profile changes during AOI inspection.
+- The degree of reflectivity varies with:
+  - Copper thickness and surface roughness
+  - Etching chemistry and process parameters
+  - Time since etching (oxidation reduces reflectivity over hours)
+  - Ambient humidity
+
+3. AOI INTERACTION WITH REFLECTIVE SURFACES
+
+3.1 Normal Operation:
+- AOI systems compensate for copper reflectivity using multi-angle lighting.
+- Reference thresholds are calibrated to account for expected reflectivity range.
+
+3.2 After Calibration Events:
+- Changes to lighting angles or intensity during calibration can alter how reflective surfaces appear to the AOI camera.
+- Copper trace reflection can increase false positives for copper-residue-like defects (such as Spurious Copper, SC) after lighting changes.
+- Spurious Copper detections may increase by 20-50% after lighting recalibration on boards with high reflective copper regions.
+
+3.3 Distinguishing Real SC from Reflection Artifacts:
+- Real Spurious Copper: Extra copper material physically present, visible under multiple lighting angles.
+- Reflection Artifact: Appears only under specific lighting angles, disappears when board is tilted.
+- Manual verification is the definitive method to distinguish real SC from reflection.
+
+4. RECOMMENDATIONS
+- After AOI calibration, monitor SC detection rates on PCB-X100 for 5 shifts.
+- If SC detection rate increases >20% and manual confirmation rate drops below 60%, suspect lighting-induced false positives.
+- Cross-reference with SOP-AOI-CAL-v1.4 for calibration drift monitoring procedure.
+
+5. REFERENCES
+- SOP-AOI-CAL-v1.4: AOI Calibration Drift Monitoring
+- TROUBLESHOOT-AOI-REFLECTION-v1.0: AOI Reflection Troubleshooting

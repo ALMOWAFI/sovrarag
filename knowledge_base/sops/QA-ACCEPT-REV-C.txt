@@ -1,0 +1,37 @@
+QUALITY ACCEPTANCE CRITERIA
+QA-ACCEPT-REV-C: Acceptance Criteria for PCB-X100 Rev-C Material Revision
+Effective Date: 2026-03-01 | Owner: Quality Engineering / Supplier Quality
+
+1. SCOPE
+This document defines the acceptance criteria for PCB-X100 boards manufactured with the Rev-C material revision, which uses a new substrate supplier (SUP-077) with a different base material formulation.
+
+2. MATERIAL CHANGE SUMMARY
+- PCB-X100 changed from Rev-B to Rev-C substrate.
+- New supplier SUP-077 provides the base laminate material.
+- The Rev-C material may exhibit slightly different visual appearance (texture, color shade) compared to Rev-B.
+- Electrical and mechanical properties meet or exceed Rev-B specifications per qualification testing.
+
+3. VISUAL VARIATION ACCEPTANCE
+
+3.1 Expected Variations:
+- Slightly different base material texture (smoother or rougher than Rev-B).
+- Minor color shade difference in bare substrate areas.
+- Different solder mask adhesion appearance at edges (cosmetic only).
+
+3.2 Acceptance Rule:
+- Texture variation on Rev-C base material is acceptable if no conductor damage, foreign object, open, or short is detected.
+- Visual differences alone are not grounds for rejection during the qualification period.
+- If CV (computer vision) inspection returns no defect detection and manual inspection confirms no functional defect, the board should be passed or monitored.
+
+3.3 Rejection Rule:
+- If visual variation is accompanied by confirmed conductor damage, delamination, or electrical defect, reject and escalate to supplier quality.
+- If confirmed defect rate on Rev-C exceeds Rev-B historical baseline by >50%, pause qualification and review material specification.
+
+4. QUALIFICATION MONITORING
+- All Rev-C qualification batches must be tracked separately in QMS.
+- Visual variation reports should be logged but do not count as defect events unless confirmed by inspection.
+- Minimum qualification volume: 3 production batches with <2% confirmed defect rate.
+
+5. REFERENCES
+- ECN-2026-00510: Engineering Change Notice for PCB-X100 Rev-B to Rev-C
+- Supplier qualification report for SUP-077

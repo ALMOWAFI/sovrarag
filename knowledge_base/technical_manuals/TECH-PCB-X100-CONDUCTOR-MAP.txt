@@ -1,0 +1,43 @@
+TECHNICAL MANUAL
+TECH-PCB-X100-CONDUCTOR-MAP: PCB-X100 Functional Conductor Path Mapping
+Product: PCB-X100 | Applicable Revisions: Rev-B, Rev-C
+
+1. PURPOSE
+This document maps the functional conductor regions on PCB-X100 to enable zone-based defect disposition. When a defect is detected, the affected coordinate region should be checked against this map to determine whether the defect is in a functional zone.
+
+2. FUNCTIONAL ZONE DEFINITIONS
+
+2.1 BCM-01 Power Distribution Conductor Path:
+- Location: Center and lower-center crop regions of the board.
+- Function: Main power distribution path for the Body Control Module.
+- Safety criticality: HIGH — interruption or bridging on this path can cause BCM malfunction.
+- The affected coordinate region contains a functional conductor path for BCM-01 power distribution.
+- Any Open (OP) or Short (SH) defect in this zone is classified as critical.
+
+2.2 Lighting Control Signal Path:
+- Location: Upper-right quadrant.
+- Function: Signal routing for vehicle lighting control.
+- Safety criticality: MEDIUM.
+
+2.3 Communication Bus Path:
+- Location: Board edge routing (left and bottom edges).
+- Function: CAN/LIN bus communication traces.
+- Safety criticality: HIGH.
+
+2.4 Test Coupon Area:
+- Location: Board edge breakaway tabs and designated test coupon zones.
+- Function: Process monitoring only — not part of functional circuit.
+- Safety criticality: NONE for product functionality.
+- See TECH-PCB-X100-ZONE-MAP for detailed zone boundaries.
+
+3. DEFECT ZONE IMPACT MATRIX
+- OP in BCM-01 path: CRITICAL — electrical continuity broken.
+- SH in BCM-01 path: CRITICAL — power isolation compromised.
+- CS in BCM-01 path: HIGH — conductor integrity at risk.
+- BMFO in BCM-01 path: MEDIUM — reclassify as CFO.
+- Any defect in test coupon area: LOG ONLY — no product impact.
+
+4. REFERENCES
+- TECH-PCB-X100-ZONE-MAP: Board Zone Mapping
+- SOP-PCB-OP-v2.1: Open Defect Handling
+- SOP-PCB-SHORT-v2.0: Short Defect Handling

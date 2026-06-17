@@ -1,0 +1,41 @@
+REPAIR GUIDELINE
+REPAIR-GUIDE-OP-v1.0: Open Defect (OP) Repair — Manual Copper Bridge Method
+Revision: 1.0 | Effective Date: 2025-08-01 | Owner: Manufacturing Engineering
+
+1. SCOPE
+This guideline covers the manual copper bridge repair method for Open (OP) defects on PCB conductor traces. This is a temporary repair technique that restores electrical continuity.
+
+2. METHOD DESCRIPTION
+Manual copper bridge repair involves placing a thin copper wire or ribbon across the open gap in the conductor trace and soldering it to the intact conductor on both sides of the break.
+
+3. PROCEDURE
+Step 1: Clean the repair area with IPA.
+Step 2: Apply flux to both sides of the open gap.
+Step 3: Cut a copper wire (matching conductor width) to span the gap plus 1mm overlap on each side.
+Step 4: Position the wire bridge across the gap using ESD tweezers.
+Step 5: Solder both ends of the wire to the intact conductor using a fine-tip iron at 330C.
+Step 6: Clean excess flux with IPA.
+Step 7: Perform continuity test across the repaired conductor.
+Step 8: Perform isolation test to adjacent conductors.
+
+4. LIMITATIONS AND WARNINGS
+
+4.1 Symptom vs. Root Cause:
+- Manual bridge repair may restore continuity but does not address repeated conductor formation or etching instability.
+- This repair fixes the symptom (broken conductor) but not the root cause (why the conductor broke).
+- If the same defect recurs after bridge repair, the repair is classified as ineffective.
+
+4.2 Recurrence Monitoring:
+- Track all bridge repairs in QMS with repair_id and board serial number.
+- If an OP defect recurs on the same board region within 30 days after bridge repair, do not approve another bridge repair.
+- Recurrence after repair indicates a process-level issue (etching parameters, chemical bath condition, or material quality).
+- Escalate to engineering for root cause analysis.
+
+4.3 Restrictions:
+- Maximum 1 bridge repair per conductor path per board.
+- Not approved for safety-critical conductor paths without engineering authorization.
+- Not approved for high-frequency signal paths (impedance mismatch risk).
+
+5. REFERENCES
+- SOP-PCB-OP-v2.1: Open Defect Handling
+- TECH-PCB-X100-CONDUCTOR-MAP: Conductor Path Mapping

@@ -1,0 +1,40 @@
+TECHNICAL MANUAL
+TECH-PCB-X100-ZONE-MAP: PCB-X100 Board Zone Mapping
+Product: PCB-X100 | Applicable Revisions: Rev-B, Rev-C
+
+1. PURPOSE
+This document defines the board zone map for PCB-X100, separating the functional circuit area from the process monitoring test coupon area. This mapping is used for zone-based defect disposition.
+
+2. ZONE DEFINITIONS
+
+2.1 Functional Circuit Area:
+- Encompasses all active conductor traces, component pads, vias, and plated through-holes that are part of the final product circuit.
+- Includes: BCM-01 power distribution, lighting control signal paths, communication bus routing, component mounting areas.
+- Defects in this zone directly affect product functionality and reliability.
+
+2.2 Test Coupon Area:
+- Located on breakaway tabs or designated corners of the production panel.
+- The detected HB coordinates belong to the test coupon area, which is used for process monitoring and is not part of the functional circuit.
+- Test coupons contain representative conductor patterns, vias, and plated holes that mirror production features.
+- Test coupons are used for:
+  - Process capability monitoring (drill accuracy, plating thickness, etching uniformity)
+  - Destructive cross-section analysis
+  - Supplier qualification verification
+- Defects in test coupons indicate potential process drift but do NOT affect the product board.
+
+3. ZONE COORDINATE MAPPING
+- Functional area: All coordinates within the product board outline.
+- Test coupon area: Coordinates in designated coupon regions (board edges, breakaway tabs).
+- When board_zone_map_available=true in the inspection data, use coordinate_range_confirmed_as_test_coupon to determine zone.
+
+4. DISPOSITION BY ZONE
+- Defect in functional circuit area: Follow standard defect SOP (reject, rework, or manual review based on defect type).
+- Defect in test coupon area:
+  - Log for process monitoring — do NOT automatically reject the product.
+  - Detection severity from CV applies to the test coupon, not the product.
+  - Business disposition depends on board-zone mapping, so CV detection alone should not automatically reject the board.
+  - Notify process engineering if defect rate in test coupons exceeds monitoring thresholds.
+
+5. REFERENCES
+- SOP-HB-ZONE-v1.0: Hole Breakout Zone-Based Disposition
+- TECH-PCB-X100-CONDUCTOR-MAP: Functional Conductor Path Mapping

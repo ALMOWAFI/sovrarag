@@ -1,0 +1,41 @@
+STANDARD OPERATING PROCEDURE
+SOP-CONTAMINATION-v1.1: Foreign Object Contamination Near Conductor Regions
+Revision: 1.1 | Effective Date: 2025-10-15 | Owner: Quality Engineering
+
+1. SCOPE
+This SOP covers the identification, disposition, and escalation of Conductor Foreign Object (CFO) defects — foreign material detected on or near conductor paths during AOI inspection.
+
+2. DEFINITION
+A Conductor Foreign Object (CFO) is a foreign particle, fiber, debris, or contaminant found on or in close proximity to conductor paths, pads, vias, or other electrically active areas of a PCB. CFO is more serious than BMFO (Base Material Foreign Object) because foreign objects on conductor regions may interfere with electrical behavior, cause shorts, or degrade reliability.
+
+3. DISTINCTION FROM BMFO
+- BMFO: Foreign object on base material (substrate), away from conductors. Lower risk.
+- CFO: Foreign object on or near conductor regions. Higher risk — may cause electrical interference.
+- When in doubt about whether the object is on base material or conductor, classify as CFO.
+
+4. DISPOSITION RULES
+
+4.1 Single Occurrence:
+- Foreign object defects near conductor regions require manual review and station contamination check.
+- If the object can be safely removed without conductor damage, clean and reinspect.
+- If the object is embedded or cannot be removed cleanly, reject the board.
+
+4.2 Shift-Correlated Pattern:
+- If CFO detections concentrate on a specific shift (e.g., night shift), investigate shift-specific environmental factors: HVAC operation, cleaning schedules, operator handling practices.
+- Correlate with maintenance logs for dust accumulation or environmental control issues.
+
+4.3 Station Contamination Pattern:
+- If CFO and/or BMFO detections are recurring at the same station, this indicates a station-level contamination source.
+- Temporary cleaning is not sufficient if foreign object detections continue. Full station cleaning is required per CLEANING-PROCEDURE-AOI-v2.0.
+- After full cleaning, monitor for 3 shifts to confirm resolution.
+
+5. ESCALATION
+- Single CFO, removable: clean_and_reinspect.
+- Recurring CFO at same station: clean_station.
+- CFO pattern linked to specific shift: clean_station + shift-specific investigation.
+- CFO with confirmed electrical impact: reject.
+
+6. REFERENCES
+- TECH-PCB-X100-CONTAMINATION-RISK: Contamination Risk on Conductor Regions
+- CLEANING-PROCEDURE-AOI-v2.0: AOI Station Cleaning Procedure
+- SOP-BMFO-v1.2: Base Material Foreign Object Handling

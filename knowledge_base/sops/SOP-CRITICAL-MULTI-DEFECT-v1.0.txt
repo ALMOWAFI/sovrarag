@@ -1,0 +1,48 @@
+STANDARD OPERATING PROCEDURE
+SOP-CRITICAL-MULTI-DEFECT-v1.0: Multiple Critical Electrical Defect Handling
+Revision: 1.0 | Effective Date: 2026-01-15 | Owner: Quality Engineering
+
+1. SCOPE
+This SOP covers the disposition of PCB assemblies where multiple critical electrical defects (such as Open and Short) are detected on the same board during AOI or electrical inspection.
+
+2. DEFINITION
+A multi-critical defect condition exists when a single board has two or more confirmed or suspected critical electrical defects. Critical electrical defects include:
+- Short (SH): Unintended conductor connection
+- Open (OP): Conductor discontinuity
+- Missing safety component
+- VCC-GND bridge
+
+3. SEVERITY
+Multi-critical defect boards represent severe reliability risk. The combination of Open and Short defects on the same board indicates potential systemic process failure affecting conductor formation, etching, or lamination.
+
+4. DISPOSITION RULES
+
+4.1 Mandatory Rule:
+- If a board has multiple critical electrical defects such as Open and Short, automatic pass is not allowed.
+- Board must be rejected or sent to engineering-controlled rework.
+- Standard rework procedures do not apply — engineering must evaluate whether rework is feasible and safe.
+
+4.2 Engineering-Controlled Rework:
+- Only permitted if engineering confirms that both defects can be independently verified and repaired without introducing new risks.
+- Post-rework verification must include full electrical testing (continuity, isolation, functional test).
+- If engineering rework fails, the board must be rejected — no second rework attempt.
+
+4.3 Batch-Level Investigation:
+- If multi-critical defects appear in the same batch family (2+ cases in 14 days), investigate batch-level process parameters.
+- Review previous disposition history — if historical outcomes show high rejection or rework failure rates, tighten disposition to immediate rejection.
+- No standard repair guideline should override the multi-critical defect SOP.
+
+5. ESCALATION
+- Single board with multi-critical defects: reject or escalate_engineering.
+- Multi-critical pattern in batch family: quarantine_batch + escalate_engineering.
+- Previous engineering rework failed on same batch: reject.
+
+6. CONFIDENCE ASSESSMENT
+- If CV confidence for both defects is high (>0.70): high confidence in multi-critical classification.
+- If CV confidence is medium (0.50-0.70): medium confidence — still reject or escalate, but note uncertainty.
+- If CV confidence is low (<0.50): manual verification required before multi-critical classification.
+
+7. REFERENCES
+- SOP-PCB-OP-v2.1: Open Defect Handling
+- SOP-PCB-SHORT-v2.0: Short Defect Handling
+- TECH-PCB-X100-ELECTRICAL-RISK: Concurrent Electrical Defect Risk Assessment

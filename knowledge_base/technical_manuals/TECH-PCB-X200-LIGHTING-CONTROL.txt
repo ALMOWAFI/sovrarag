@@ -1,0 +1,34 @@
+TECHNICAL MANUAL
+TECH-PCB-X200-LIGHTING-CONTROL: PCB-X200 Lighting Control Module Technical Specifications
+Product: PCB-X200 | Revision: Rev-A | Part Number: PN-PCB-X200-REV-A
+
+1. PRODUCT OVERVIEW
+PCB-X200 is the Lighting Control PCB used in the vehicle lighting control module. It is inspected on secondary PCB inspection line LINE-C2 at station AOI-09.
+
+2. SPECIFICATIONS
+- Substrate: FR-4 standard
+- Layer count: 2 layers
+- Conductor edge sensitivity: Medium
+- Application area: Automotive body electronics — lighting control
+- Safety criticality: Medium
+- Surface finish: HASL (Hot Air Solder Leveling)
+
+3. DEFECT RISK AREAS
+
+3.1 Mouse Bite (MB):
+- Mouse Bite near conductor edges may affect reliability, but confirmation is required before disposition.
+- MB defects are typically caused by depaneling process issues (routing bit wear, incorrect offset).
+- The conductor edges on PCB-X200 have medium sensitivity to MB — minor edge irregularities may be acceptable if conductor width is maintained.
+
+3.2 MB Disposition Guidance:
+- If MB is detected with high confidence and is confirmed to reduce conductor width below specification: reject.
+- If MB is detected with low confidence: manual review required before disposition.
+- If no historical recurrence data exists for MB on this product/line/station, do not assume a recurring pattern.
+
+4. INSPECTION LINE
+- Inspected on LINE-C2 (secondary PCB inspection line)
+- AOI station: AOI-09
+- Different inspection environment from LINE-A3 — separate calibration and maintenance schedules.
+
+5. REFERENCES
+- SOP-LOW-CONF-v1.0: Low-Confidence Visual Detection Handling

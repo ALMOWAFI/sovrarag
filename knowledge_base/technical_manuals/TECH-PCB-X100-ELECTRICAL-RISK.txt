@@ -1,0 +1,42 @@
+TECHNICAL MANUAL
+TECH-PCB-X100-ELECTRICAL-RISK: Concurrent Electrical Defect Risk Assessment
+Product: PCB-X100 | Applicable Revisions: Rev-B, Rev-C
+
+1. PURPOSE
+This document assesses the electrical reliability risk when multiple critical defects (Open and Short) are detected concurrently on the same PCB-X100 board.
+
+2. CONCURRENT DEFECT RISK
+
+2.1 Open + Short on Same Board:
+- Concurrent open and short defects indicate severe reliability risk.
+- An Open breaks an intended connection while a Short creates an unintended connection — together they represent a fundamental conductor formation failure.
+- This combination requires electrical verification before any rework decision.
+- The probability of successful rework is low because fixing one defect may not address the root cause of the other.
+
+2.2 Root Cause Correlation:
+- Concurrent OP + SH often indicates:
+  - Etching process instability (over-etch in some areas, under-etch in others)
+  - Laminate quality issue causing variable conductor adhesion
+  - Registration error during exposure
+- These root causes are process-level, not board-level — other boards in the same batch may be affected.
+
+3. ELECTRICAL VERIFICATION REQUIREMENTS
+- If both OP and SH are detected on the same board:
+  - Full electrical continuity test on all affected nets
+  - Isolation test between all adjacent conductors in the affected region
+  - Functional test if board is in engineering rework evaluation
+
+4. DISPOSITION GUIDANCE
+- Automatic pass is never acceptable for boards with concurrent critical electrical defects.
+- Standard rework procedures do not apply — engineering evaluation is required.
+- If previous engineering rework on the same batch family has failed, immediate rejection is recommended.
+- Confidence assessment should reflect CV confidence: if CV confidence is medium (not very high), note the uncertainty but still reject or escalate.
+
+5. BATCH-LEVEL IMPLICATIONS
+- If 2+ boards in the same batch family show concurrent critical defects within 14 days, quarantine the batch.
+- Review batch-level process parameters (etching, exposure, lamination).
+
+6. REFERENCES
+- SOP-CRITICAL-MULTI-DEFECT-v1.0: Multiple Critical Electrical Defect Handling
+- SOP-PCB-OP-v2.1: Open Defect Handling
+- SOP-PCB-SHORT-v2.0: Short Defect Handling

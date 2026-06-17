@@ -1,0 +1,42 @@
+STANDARD OPERATING PROCEDURE
+SOP-CS-v1.2: Conductor Scratch (CS) Defect Handling
+Revision: 1.2 | Effective Date: 2025-08-15 | Owner: Quality Engineering
+
+1. SCOPE
+This SOP covers the identification, disposition, and escalation of Conductor Scratch (CS) defects detected during AOI inspection on PCB assemblies. CS defects are physical scratches or abrasions on conductor traces caused by mechanical contact during handling, transport, or processing.
+
+2. DEFINITION
+A Conductor Scratch (CS) is a mechanical defect where the copper conductor surface has been physically damaged by contact with handling equipment, tooling, fixtures, or other objects. Unlike etching defects, CS defects are caused by post-formation mechanical action.
+
+3. ROOT CAUSE CATEGORIES
+- Handling robot misalignment or excessive contact pressure
+- Worn or damaged handling guides, fixtures, or conveyor rails
+- Manual handling errors (operator contact with board surface)
+- Depaneling tool contact with conductor areas
+
+4. DISPOSITION RULES
+
+4.1 Single Occurrence:
+- If scratch depth does not penetrate more than 30% of conductor thickness: log and pass with monitoring.
+- If scratch depth exceeds 30% or conductor width is reduced: reject or rework.
+- All CS defects in safety-critical conductor zones: reject regardless of depth.
+
+4.2 Recurring CS After Handling Equipment Repair:
+- Repeated conductor scratch after guide replacement suggests checking handling alignment, contact pressure, and robot path calibration.
+- Guide replacement alone is not sufficient if the root cause is robot alignment, path programming, or pressure settings.
+- If CS recurs within 7 days of handling equipment repair, the repair is classified as ineffective.
+- Escalate to engineering for full mechanical root cause analysis including robot path verification.
+
+4.3 CS with Secondary Defects:
+- If CS is accompanied by CFO (Conductor Foreign Object) detections, this suggests the scratching mechanism is also depositing material on the board.
+- Investigate handling equipment for debris generation.
+
+5. ESCALATION
+- Single CS, shallow, non-safety conductor: log_and_monitor.
+- Recurring CS at same station after repair: escalate_engineering.
+- CS in safety-critical conductor: reject.
+- CS with CFO secondary: escalate_engineering.
+
+6. REFERENCES
+- TECH-PCB-X100-HANDLING-RISK: Handling Risk Assessment for Fine Conductor Traces
+- REPAIR-GUIDE-HANDLING-ROBOT-02: Handling Robot Repair and Calibration Guide

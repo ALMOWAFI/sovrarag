@@ -1,0 +1,36 @@
+ENGINEERING CHANGE NOTICE
+ECN-2026-00510: PCB-X100 Material Revision Change (Rev-B to Rev-C)
+Effective Date: 2026-03-01 | Owner: Product Engineering
+
+1. CHANGE SUMMARY
+PCB-X100 changed from Rev-B to Rev-C. The primary change is a new substrate supplier (SUP-077) replacing the previous supplier for the base FR-4 laminate material.
+
+2. CHANGE DETAILS
+- Part number change: PN-PCB-X100-REV-B to PN-PCB-X100-REV-C
+- Substrate material: New FR-4 formulation from SUP-077
+- Copper specification: No change
+- Layer stackup: No change
+- Solder mask: No change
+- Electrical specifications: No change (verified by qualification testing)
+
+3. VISUAL IMPACT
+- New substrate supplier SUP-077 may show slightly different base material texture during qualification lots.
+- Expected visual differences:
+  - Slightly different surface texture (smoother or rougher than Rev-B baseline)
+  - Minor color shade variation in bare substrate areas
+  - These differences are cosmetic and do not affect electrical or mechanical performance.
+
+4. QUALIFICATION REQUIREMENTS
+- Minimum 3 production batches must pass qualification criteria (see QA-ACCEPT-REV-C).
+- All qualification batches tracked separately in QMS with qualification_batch=true flag.
+- Visual variation reports should be logged but do not count as defects unless confirmed by CV or manual inspection.
+- Confirmed defect rate on Rev-C must not exceed Rev-B historical baseline by more than 50%.
+
+5. INSPECTION GUIDANCE
+- AOI programs do not need modification for Rev-C unless false positive rate increases significantly.
+- Operators should be briefed on expected visual differences to reduce unnecessary defect reports.
+- If CV inspection returns no defect and manual review confirms no functional issue, the board should be passed.
+
+6. REFERENCES
+- QA-ACCEPT-REV-C: Acceptance Criteria for Rev-C
+- Supplier qualification report for SUP-077

@@ -1,0 +1,39 @@
+TECHNICAL MANUAL
+TECH-PCB-X100-REV-B: PCB-X100 Rev-B Technical Specifications and Defect Risk Assessment
+Product: PCB-X100 | Revision: Rev-B | Part Number: PN-PCB-X100-REV-B
+
+1. PRODUCT OVERVIEW
+PCB-X100 is the Main Control PCB used in vehicle body control and lighting control electronics. It is manufactured at Berlin Electronics Plant (FACTORY-BERLIN-01) on PCB Assembly Line A3 (LINE-A3).
+
+2. MATERIAL SPECIFICATION
+- Substrate: FR-4 copper-clad laminate
+- Copper weight: 1 oz (35 um) outer layers
+- Layer count: 4 layers
+- Surface finish: Standard copper trace finish
+- Solder mask: Green LPI
+
+3. DEFECT RISK AREAS
+
+3.1 Foreign Material on Base Material:
+- Foreign material on base material may affect reliability if located near conductor paths, vias, or coating-sensitive areas.
+- Base material areas between conductor traces are susceptible to particle accumulation during handling and inspection.
+- Foreign particles in non-conductor areas are generally cosmetic but must be evaluated for proximity to active circuits.
+
+3.2 Conductor Trace Sensitivity:
+- Fine conductor traces in the BCM-01 power distribution region are sensitive to mechanical damage, etching variation, and contamination.
+- Minimum trace width in critical areas: 0.15mm.
+- Trace spacing in dense routing areas: 0.12mm minimum.
+
+3.3 Reflective Copper Regions:
+- After etching, exposed copper trace regions can be highly reflective.
+- Reflective surfaces may cause false positives in AOI systems, especially after lighting calibration changes.
+- Visual sensitivity is high in copper trace finish areas.
+
+4. APPLICATION
+- Affected system: Body control module (BCM)
+- Subsystem: Lighting control, power distribution
+- Safety criticality: Medium (Rev-B standard production), High (power distribution paths)
+
+5. REFERENCES
+- ECN-2026-00510: Engineering Change Notice for Rev-B to Rev-C transition
+- TECH-PCB-X100-CONDUCTOR-MAP: Functional conductor path mapping

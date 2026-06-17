@@ -1,0 +1,42 @@
+STANDARD OPERATING PROCEDURE
+SOP-PCB-SHORT-v2.0: Short (SH) Defect Handling
+Revision: 2.0 | Effective Date: 2025-07-01 | Owner: Quality Engineering
+
+1. SCOPE
+This SOP covers the identification, disposition, and escalation of Short (SH) defects detected on PCB conductor paths during AOI or electrical inspection.
+
+2. DEFINITION
+A Short (SH) defect is an unintended electrical connection between two or more conductor paths that should be isolated. Shorts are critical defects that can cause circuit malfunction, component damage, or safety hazards.
+
+3. SEVERITY CLASSIFICATION
+- Short defects are critical. They directly compromise circuit isolation and can cause immediate functional failure.
+- Shorts between power (VCC) and ground (GND) traces are classified as safety-critical.
+- Shorts in dense conductor routing areas increase the risk of cascading electrical failures.
+
+4. DISPOSITION RULES
+
+4.1 Single Occurrence:
+- Route to manual inspection to confirm the short is real.
+- If confirmed, attempt rework (solder wick removal, micro-machining) per repair guidelines.
+- Post-rework electrical testing is mandatory (continuity + isolation test).
+
+4.2 Supplier-Lot Linked Recurrence:
+- If linked to a supplier lot, quarantine the affected batch and open a supplier quality review.
+- Cross-line or cross-plant recurrence associated with the same material lot requires supplier containment action.
+- Do not release quarantined material until supplier investigation is complete and corrective action is verified.
+
+4.3 Multi-Line or Multi-Factory Pattern:
+- If SH defects appear across more than one production line or factory with the same supplier lot, this is strong evidence of incoming material quality issue.
+- Escalate to supplier quality team immediately.
+- All affected batches across all sites must be quarantined pending investigation.
+
+5. ESCALATION
+- Single confirmed SH: rework with electrical verification.
+- Recurring SH on same line (3+ in 14 days): quarantine_batch, investigate process.
+- SH linked to supplier lot across lines/factories: supplier_containment.
+- SH between VCC-GND: immediate lot stop, MRB review.
+
+6. REFERENCES
+- TECH-PCB-X100-DENSE-ROUTING: Dense Conductor Routing Risk Assessment
+- SUPPLIER-QUALITY-GUIDE-v1.3: Supplier Quality Investigation Procedure
+- IPC-A-610 Rev G: Section 5 — Soldering Defects (Bridges/Shorts)

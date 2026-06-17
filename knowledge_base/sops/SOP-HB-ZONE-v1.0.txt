@@ -1,0 +1,50 @@
+STANDARD OPERATING PROCEDURE
+SOP-HB-ZONE-v1.0: Hole Breakout (HB) Defect — Zone-Based Disposition
+Revision: 1.0 | Effective Date: 2026-01-01 | Owner: Quality Engineering
+
+1. SCOPE
+This SOP covers the identification and zone-based disposition of Hole Breakout (HB) defects detected during AOI inspection on PCB assemblies.
+
+2. DEFINITION
+A Hole Breakout (HB) defect occurs when a drilled hole or via extends beyond the boundaries of its associated annular ring or pad, exposing the PCB substrate. HB can affect electrical connectivity and mechanical integrity of plated through-holes.
+
+3. ZONE-BASED SEVERITY
+The severity and disposition of HB defects depends on the board zone where the defect is located:
+
+3.1 Functional Interconnect Zone:
+- HB in functional interconnect zones (active circuit area, power/signal routing, component mounting pads) is critical.
+- May affect electrical connectivity, impedance, or mechanical joint strength.
+- Requires manual review or rejection depending on severity.
+
+3.2 Test Coupon Area:
+- Hole breakout in test coupon area should be logged for process monitoring but does not automatically reject the product.
+- Test coupons are used for process monitoring and qualification — they are not part of the functional circuit.
+- HB in test coupons indicates a potential process drift (drill alignment, registration accuracy) that should be monitored.
+- The product itself is unaffected if functional circuit areas show no HB.
+
+4. DISPOSITION RULES
+
+4.1 Functional Zone HB:
+- Confirmed HB in functional zone: manual_review or reject depending on breakout extent.
+- If breakout exceeds 90 degrees of annular ring circumference: reject.
+- If breakout is less than 90 degrees and copper connection is maintained: manual_review.
+
+4.2 Test Coupon Zone HB:
+- Log the defect for process monitoring records.
+- Do not automatically reject the product board.
+- Notify process engineering if test coupon HB rate exceeds 5% per batch.
+- Recommended disposition: log_and_monitor.
+
+4.3 Zone Determination:
+- Use board zone mapping (if available) to determine whether detected HB coordinates fall in functional or test coupon areas.
+- If zone mapping is not available, default to manual_review.
+
+5. ESCALATION
+- Functional zone HB, severe: reject.
+- Functional zone HB, minor: manual_review.
+- Test coupon zone HB: log_and_monitor.
+- Test coupon HB rate >5% per batch: escalate to process engineering for drill alignment review.
+
+6. REFERENCES
+- TECH-PCB-X100-ZONE-MAP: Board Zone Mapping for PCB-X100
+- IPC-A-610 Rev G: Section 9 — Hole Breakout Criteria

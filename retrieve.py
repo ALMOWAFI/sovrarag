@@ -72,14 +72,14 @@ def _get_vectorstore() -> FAISS:
     return _vectorstore
 
 
-def retrieve(defect_type: str, top_k: int = TOP_K) -> list[dict[str, Any]]:
+def retrieve(query: str, top_k: int = TOP_K) -> list[dict[str, Any]]:
     """
     Retrieve the top-K most semantically relevant knowledge base chunks
-    for a given PCB defect type.
+    for a given search query.
 
     Args:
-        defect_type: Defect name, e.g. "surface_crack", "solder_bridge".
-        top_k:       Number of results to return (default: TOP_K env var or 5).
+        query:  Search query string (defect code + context keywords).
+        top_k:  Number of results to return (default: TOP_K env var or 5).
 
     Returns:
         List of dicts, each with keys:
@@ -87,11 +87,6 @@ def retrieve(defect_type: str, top_k: int = TOP_K) -> list[dict[str, Any]]:
             "metadata" — source_file, folder_category, defect_type, file_path
             "score"    — L2 distance (lower = more similar)
     """
-    query = (
-        f"PCB defect type: {defect_type.replace('_', ' ')}. "
-        f"Inspection criteria, SOP procedure, severity assessment, "
-        f"accept reject rework thresholds."
-    )
 
     vectorstore = _get_vectorstore()
     results = vectorstore.similarity_search_with_score(query, k=top_k)

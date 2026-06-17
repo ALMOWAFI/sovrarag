@@ -1,0 +1,39 @@
+TECHNICAL MANUAL
+TECH-PCB-X100-HANDLING-RISK: Handling Risk Assessment for Fine Conductor Traces
+Product: PCB-X100 | Applicable Revisions: Rev-B, Rev-C
+
+1. PURPOSE
+This document assesses the risk of mechanical damage to PCB-X100 conductor traces during automated and manual handling operations, particularly near the handling robot path.
+
+2. CONDUCTOR VULNERABILITY
+
+2.1 Fine Trace Areas:
+- Fine conductor traces near the handling path are sensitive to mechanical contact and misalignment.
+- PCB-X100 has conductor traces as narrow as 0.15mm in the BCM-01 region.
+- These traces are located near the board edges where handling robot grippers and guide rails make contact.
+
+2.2 Risk Factors:
+- Robot gripper misalignment: Even 0.5mm offset can cause gripper contact with conductor areas.
+- Excessive contact pressure: Worn or improperly adjusted grippers apply uneven pressure.
+- Guide rail wear: Worn rails create vibration and lateral board movement during transport.
+- Conveyor speed: Excessive speed increases the chance of board-to-fixture contact.
+
+3. HANDLING-RELATED DEFECT TYPES
+- CS (Conductor Scratch): Most common. Caused by direct mechanical contact with conductor surface.
+- CFO (Conductor Foreign Object): Secondary. Caused by debris from worn handling components deposited on the board.
+- Pad damage: Rare. Caused by excessive gripper pressure on pad areas.
+
+4. POST-REPAIR VERIFICATION
+- After any handling robot repair (guide replacement, gripper adjustment, conveyor modification):
+  - Robot path and pressure calibration must be verified before production restart.
+  - Guide replacement alone does not verify that the robot path and pressure are correct.
+  - If conductor scratch defects recur after repair, the repair is classified as ineffective.
+  - Full recalibration of robot path, pressure, and alignment is required.
+
+5. MONITORING
+- Track CS defect rate per station per shift after any handling equipment changes.
+- If CS rate exceeds 2% per shift after repair, halt production and escalate to equipment engineering.
+
+6. REFERENCES
+- SOP-CS-v1.2: Conductor Scratch Defect Handling
+- REPAIR-GUIDE-HANDLING-ROBOT-02: Handling Robot Repair and Calibration

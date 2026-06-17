@@ -1,0 +1,45 @@
+TROUBLESHOOTING GUIDE
+TROUBLESHOOT-AOI-REFLECTION-v1.0: AOI Reflection and Lighting False Positive Troubleshooting
+Revision: 1.0 | Effective Date: 2025-10-15 | Owner: Equipment Engineering
+
+1. SCOPE
+This guide covers the diagnosis and resolution of false positive defect detections caused by copper trace reflection and lighting sensitivity changes in AOI inspection systems.
+
+2. SYMPTOMS
+- Increased detection rate for copper-residue-like defects (Spurious Copper, SC) after AOI calibration.
+- Manual review confirmation rate drops below 60% for flagged SC detections.
+- Detections concentrate on boards with high-reflectivity copper trace finishes (e.g., PCB-X100).
+- Detections appear or disappear when board is manually tilted under the camera.
+
+3. ROOT CAUSES
+
+3.1 Lighting Profile Change:
+- Copper trace reflection can increase false positives for copper-residue-like defects after lighting changes.
+- Changes to LED angle, intensity, or sequence during calibration alter how reflective surfaces interact with the camera.
+- Multi-angle lighting compensation may be misconfigured after manual calibration.
+
+3.2 Threshold Drift:
+- Reference threshold values may not account for the full reflectivity range of production boards.
+- After recalibration, thresholds may be tighter than necessary for reflective areas.
+
+3.3 Reference Board Mismatch:
+- If the calibration reference board does not have the same copper finish as production boards, calibration may optimize for the wrong reflectivity level.
+
+4. DIAGNOSTIC STEPS
+Step 1: Compare SC detection rates before and after the calibration event.
+Step 2: Check manual review confirmation rate — if <60%, suspect false positive increase.
+Step 3: Run 10 known-good boards through the system and count false SC detections.
+Step 4: Compare detection images with manual inspection — look for lighting-angle-dependent artifacts.
+Step 5: Review calibration log for lighting parameter changes.
+
+5. RESOLUTION
+- If false positive rate is confirmed elevated:
+  - Adjust lighting profile to reduce reflection sensitivity.
+  - Update reference thresholds for SC detection on reflective boards.
+  - If available, use the pre-calibration lighting profile as baseline for comparison.
+- If resolution is not achieved:
+  - Escalate to equipment manufacturer for camera/lighting hardware assessment.
+
+6. REFERENCES
+- SOP-AOI-CAL-v1.4: AOI Calibration Drift Monitoring
+- TECH-PCB-X100-VISUAL-SENSITIVITY: Visual Sensitivity of Reflective Copper Regions
